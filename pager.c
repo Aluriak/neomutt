@@ -1395,7 +1395,7 @@ static int fill_buffer(FILE *fp, LOFF_T *last_pos, LOFF_T offset, unsigned char 
       else if ((p[0] == '\033') && (p[1] == '[') && is_ansi(p + 2)) // Escape
       {
         while (*p++ != 'm') /* skip ANSI sequence */
-          ;
+          ; // do nothing
       }
       else if ((p[0] == '\033') && (p[1] == ']') && // Escape
                ((check_attachment_marker((char *) p) == 0) ||
@@ -1403,7 +1403,7 @@ static int fill_buffer(FILE *fp, LOFF_T *last_pos, LOFF_T offset, unsigned char 
       {
         mutt_debug(LL_DEBUG2, "Seen attachment marker\n");
         while (*p++ != '\a') /* skip pseudo-ANSI sequence */
-          ;
+          ; // do nothing
       }
       else
         *q++ = *p++;

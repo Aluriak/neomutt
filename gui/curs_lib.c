@@ -602,7 +602,7 @@ int mutt_any_key_to_continue(const char *s)
   char ch = '\0';
   // Wait for a character.  This might timeout, so loop.
   while (read(fd, &ch, 1) == 0)
-    ;
+    ; // do nothing
 
   // Change the tty settings to be non-blocking
   term.c_cc[VMIN] = 0;  // Returning with zero characters is acceptable
@@ -611,7 +611,7 @@ int mutt_any_key_to_continue(const char *s)
 
   char buf[64];
   while (read(fd, buf, sizeof(buf)) > 0) // Mop up any remaining chars
-    ;
+    ; // do nothing
 
   tcsetattr(fd, TCSANOW, &old); // Restore the previous tty settings
   close(fd);
