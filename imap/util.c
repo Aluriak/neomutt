@@ -282,7 +282,8 @@ void imap_get_parent(const char *mbox, char delim, char *buf, size_t buflen)
    * If buf == '/', then n-- => n == 0, so the loop ends
    * immediately */
   for (n--; (n >= 0) && (buf[n] != delim); n--)
-    ;
+  {
+  }
 
   /* We stopped before the beginning. There is a trailing slash.  */
   if (n > 0)

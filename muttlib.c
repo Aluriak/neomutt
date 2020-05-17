@@ -1032,7 +1032,8 @@ void mutt_expando_format(char *buf, size_t buflen, size_t col, int cols, const c
         *p = '<';
         /* skip over "x" */
         for (; *p && *p != '?'; p++)
-          ;
+        {
+        }
         /* nothing */
         if (*p == '?')
           p++;
@@ -1645,7 +1646,8 @@ void mutt_get_parent_path(const char *path, char *buf, size_t buflen)
 
     /* Remove everything until the next slash */
     for (n--; ((n >= 0) && (buf[n] != '/')); n--)
-      ;
+    {
+    }
 
     if (n > 0)
       buf[n] = '\0';

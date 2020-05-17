@@ -528,7 +528,8 @@ static void imap_logout(struct ImapAccountData *adata)
   if ((C_ImapPollTimeout <= 0) || (mutt_socket_poll(adata->conn, C_ImapPollTimeout) != 0))
   {
     while (imap_cmd_step(adata) == IMAP_RES_CONTINUE)
-      ;
+    {
+    }
   }
   mutt_socket_close(adata->conn);
   adata->state = IMAP_DISCONNECTED;
