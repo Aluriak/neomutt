@@ -1734,6 +1734,7 @@ static int show_sig_summary(unsigned long sum, gpgme_ctx_t ctx, gpgme_key_t key,
     result = gpgme_op_verify_result(ctx);
     for (sig2 = result->signatures, i = 0; sig2 && (i < idx); sig2 = sig2->next, i++)
       ;
+
     if (sig2)
     {
       t0 = "";
@@ -1967,6 +1968,7 @@ static int show_one_sig_status(gpgme_ctx_t ctx, int idx, struct State *s)
     int i;
     for (i = 0, sig = result->signatures; sig && (i < idx); i++, sig = sig->next)
       ;
+
     if (!sig)
       return -1; /* Signature not found.  */
 
@@ -3915,6 +3917,7 @@ static const char *parse_dn_part(struct DnArray *array, const char *str)
   /* parse attribute type */
   for (s = str + 1; (s[0] != '\0') && (s[0] != '='); s++)
     ;
+
   if (s[0] == '\0')
     return NULL; /* error */
   n = s - str;

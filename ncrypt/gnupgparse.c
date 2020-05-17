@@ -453,6 +453,7 @@ struct PgpKeyInfo *pgp_get_candidates(enum PgpRing keyring, struct ListHead *hin
         k->parent = mainkey;
         for (l = &k->address; *l; l = &(*l)->next)
           ;
+
         *l = pgp_copy_uids(mainkey->address, k);
       }
       else

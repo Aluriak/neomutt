@@ -559,6 +559,7 @@ int mutt_enter_string_full(char *buf, size_t buflen, int col,
             }
             for (; (i < state->lastchar) && (state->wbuf[i] == ' '); i++)
               ;
+
             mutt_mb_wcstombs(buf, buflen, state->wbuf + i, state->curpos - i);
             int rc2 = alias_complete(buf, buflen);
             replace_part(state, i, buf);
@@ -578,6 +579,7 @@ int mutt_enter_string_full(char *buf, size_t buflen, int col,
             }
             for (; (i < state->lastchar) && (state->wbuf[i] == ' '); i++)
               ;
+
             mutt_mb_wcstombs(buf, buflen, state->wbuf + i, state->curpos - i);
             int rc2 = mutt_label_complete(buf, buflen, state->tabs);
             replace_part(state, i, buf);
@@ -593,6 +595,7 @@ int mutt_enter_string_full(char *buf, size_t buflen, int col,
             size_t i;
             for (i = state->curpos; (i > 0) && (state->wbuf[i - 1] != '~'); i--)
               ;
+
             if ((i > 0) && (i < state->curpos) && (state->wbuf[i - 1] == '~') &&
                 (state->wbuf[i] == 'y'))
             {
@@ -617,6 +620,7 @@ int mutt_enter_string_full(char *buf, size_t buflen, int col,
             {
               for (; (i > 0) && (state->wbuf[i - 1] != ','); i--)
                 ;
+
               for (; (i < state->curpos) && (state->wbuf[i] == ' '); i++)
                 ;
             }

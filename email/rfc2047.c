@@ -560,6 +560,7 @@ static int encode(const char *d, size_t dlen, int col, const char *fromcode,
         assert(t1 < (u + ulen));
         for (t1++; (t1 < (u + ulen)) && !HSPACE(*t1); t1++)
           ;
+
         continue;
       }
       n = choose_block(t, n, col, icode, tocode, &encoder, &wlen);

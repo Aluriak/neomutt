@@ -569,6 +569,7 @@ const char *mutt_str_strchrnul(const char *s, char c)
 
   for (; *s && (*s != c); s++)
     ;
+
   return s;
 }
 

@@ -1252,6 +1252,7 @@ void mutt_buffer_select_file(struct Buffer *file, SelectFileFlags flags,
       int i;
       for (i = mutt_buffer_len(file) - 1; (i > 0) && ((mutt_b2s(file))[i] != '/'); i--)
         ;
+
       if (i > 0)
       {
         if ((mutt_b2s(file))[0] == '/')

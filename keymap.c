@@ -533,6 +533,7 @@ static void generic_tokenize_push_string(char *s, void (*generic_push)(int, int)
     {
       for (pp = p - 1; pp >= s && *pp != '<'; pp--)
         ;
+
       if (pp >= s)
       {
         i = parse_fkey(pp);

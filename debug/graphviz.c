@@ -353,6 +353,7 @@ static void dot_config(FILE *fp, const char *name, int type,
     int i = 0;
     for (; list[i]; i++)
       ;
+
     dot_type_number(fp, "count", i);
   }
 

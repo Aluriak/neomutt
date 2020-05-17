@@ -131,6 +131,7 @@ static void candidate(char *user, const char *src, char *dest, size_t dlen)
     int l;
     for (l = 0; src[l] && src[l] == dest[l]; l++)
       ;
+
     dest[l] = '\0';
   }
 }
@@ -604,6 +605,7 @@ int mutt_extract_token(struct Buffer *dest, struct Buffer *tok, TokenFlags flags
       {
         for (pc = tok->dptr; isalnum((unsigned char) *pc) || (pc[0] == '_'); pc++)
           ;
+
         var = mutt_str_substr_dup(tok->dptr, pc);
         tok->dptr = pc;
       }

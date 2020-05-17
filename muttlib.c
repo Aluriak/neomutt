@@ -1033,6 +1033,7 @@ void mutt_expando_format(char *buf, size_t buflen, size_t col, int cols, const c
         /* skip over "x" */
         for (; *p && *p != '?'; p++)
           ;
+
         /* nothing */
         if (*p == '?')
           p++;

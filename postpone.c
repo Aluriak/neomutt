@@ -568,6 +568,7 @@ SecurityFlags mutt_parse_crypt_hdr(const char *p, bool set_empty_signas, Securit
 
         for (p += 2; (p[0] != '\0') && (p[0] != '>'); p++)
           ;
+
         if (p[0] != '>')
         {
           mutt_error(_("Illegal crypto header"));

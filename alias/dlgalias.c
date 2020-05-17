@@ -374,6 +374,7 @@ int alias_complete(char *buf, size_t buflen)
           int i;
           for (i = 0; np->name[i] && (np->name[i] == bestname[i]); i++)
             ;
+
           bestname[i] = '\0';
         }
       }

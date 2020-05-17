@@ -294,6 +294,7 @@ int imap_browse(const char *path, struct BrowserState *state)
      *  NAMESPACES without delimiters at the end. Argh! */
     for (n--; n >= 0 && mbox[n] != list.delim; n--)
       ;
+
     if (n > 0) /* "aaaa/bbbb/" -> "aaaa" */
     {
       /* forget the check, it is too delicate (see above). Have we ever
